@@ -11,6 +11,6 @@ RUN apt-get update -y \
 
 RUN curl --insecure -L https://cpanmin.us | perl - App::cpanminus
 RUN apt-get install libwww-curl-perl
-RUN cpanm  Bio::GNE::Hive::Utils  --mirror http://gpan.gene.com:5000  --mirror http://cpan.cpantesters.org/
+
 
 
