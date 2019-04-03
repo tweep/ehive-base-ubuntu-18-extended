@@ -12,6 +12,7 @@ RUN apt-get update -y \
     && apt-get install -y build-essential
 
 RUN curl --insecure -L https://cpanmin.us | perl - App::cpanminus
+RUN cpanm File::Slurp IPC::System::Simple Module::Build
 RUN apt-get install libwww-curl-perl
 
 
