@@ -13,6 +13,7 @@ RUN apt-get update -y \
 
 RUN curl --insecure -L https://cpanmin.us | perl - App::cpanminus
 RUN cpanm File::Slurp IPC::System::Simple Module::Build Test::Differences
+RUN cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
 RUN apt-get install libwww-curl-perl
 
 
