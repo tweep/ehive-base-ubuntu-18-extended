@@ -7,6 +7,10 @@ FROM tweep/ehive-base-ubuntu-18
 
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -y \
-    && apt-get install -y build-essentials 
+    && apt-get install -y build-essential
+
+RUN curl --insecure -L https://cpanmin.us | perl - App::cpanminus
+RUN apt-get install libwww-curl-perl
+RUN cpanm  Bio::GNE::Hive::Utils  --mirror http://gpan.gene.com:5000  --mirror http://cpan.cpantesters.org/
 
 
