@@ -11,6 +11,8 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -y \
     && apt-get install -y vim awscli cpanminus build-essential libcurl4-openssl-dev
 
+# libcurl4-openssl-dev required for WWW::Curl::Easy / Bio::GNE::Hive::Utils
+
 RUN curl --insecure -L https://cpanmin.us | perl - App::cpanminus
 RUN cpanm File::Slurp IPC::System::Simple Module::Build Test::Differences
 RUN cpanm -v AWS::CLIWrapper String::Random Switch
