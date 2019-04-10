@@ -9,7 +9,7 @@ FROM tweep/ehive-base-ubuntu-18
 
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -y \
-    && apt-get install -y vim awscli cpanminus build-essential 
+    && apt-get install -y vim awscli cpanminus build-essential libcurl4-openssl-dev
 
 RUN curl --insecure -L https://cpanmin.us | perl - App::cpanminus
 RUN cpanm File::Slurp IPC::System::Simple Module::Build Test::Differences
