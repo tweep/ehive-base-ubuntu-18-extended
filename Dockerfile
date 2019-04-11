@@ -17,6 +17,9 @@ RUN curl --insecure -L https://cpanmin.us | perl - App::cpanminus
 RUN cpanm File::Slurp IPC::System::Simple Module::Build Test::Differences
 RUN cpanm -v AWS::CLIWrapper String::Random Switch
 
+# modules for standard pipelines
+RUN cpanm -v File::Temp Test::utf8 Test::TempDir::Tiny Test::File Test::Files
+
 RUN cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
 RUN apt-get install libwww-curl-perl
 
