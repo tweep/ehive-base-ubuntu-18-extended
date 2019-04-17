@@ -23,5 +23,7 @@ RUN cpanm -v File::Temp Test::utf8 Test::TempDir::Tiny Test::File Test::Files
 RUN cpanm --local-lib=~/perl5 local::lib && eval $(perl -I ~/perl5/lib/perl5/ -Mlocal::lib)
 RUN apt-get install libwww-curl-perl
 
+RUN locale-gen --purge en_US en_US.UTF-8
+RUN  echo -e 'LANG="en_US.UTF-8"\nLANGUAGE="en_US:en"\n' > /etc/default/locale
 
 
